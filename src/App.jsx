@@ -10,6 +10,7 @@ export default function App() {
   return (
     <div>
       <NXHeader />
+      
 
       <div style={{ minHeight: "80vh" }}>
         <Routes>

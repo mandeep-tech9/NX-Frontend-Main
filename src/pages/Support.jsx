@@ -1,4 +1,8 @@
 
-export default function Support() {
-  return <h2>Support Workspace</h2>;
+export default function Test() {
+  return (
+    <div className="p-10 bg-red-500 text-white text-3xl">
+      Tailwind Working?
+    </div>
+  );
 }

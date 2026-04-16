@@ -10,7 +10,7 @@ export default function NXHeader() {
       style={{
         background: "linear-gradient(180deg,#ffffffee,#ffffff)",
         borderBottom: "1px solid rgba(15,23,42,0.06)",
-        position: "sticky",
+        position: "relative",
         top: 0,
         zIndex: 50,
       }}

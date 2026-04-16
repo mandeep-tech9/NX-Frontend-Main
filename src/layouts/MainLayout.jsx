@@ -1,75 +1,24 @@
-// src/layouts/MainLayout.jsx
-import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { ROUTES } from "../routes/routesConfig";
 
 export default function MainLayout() {
   return (
-    <div className="app-container">
-      <style>{`
-        .app-container {
-          display: flex;
-          height: 100vh;
-          font-family: Inter, sans-serif;
-          background: #f8fafc;
-        }
-
-        .sidebar {
-          width: 240px;
-          background: #0f172a;
-          color: #fff;
-          padding: 20px;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .logo {
-          font-weight: 800;
-          font-size: 18px;
-          margin-bottom: 30px;
-        }
-
-        .menu-item {
-          padding: 12px 14px;
-          border-radius: 10px;
-          margin-bottom: 8px;
-          color: #cbd5f5;
-          text-decoration: none;
-          display: block;
-          transition: 0.2s;
-        }
-
-        .menu-item:hover {
-          background: rgba(255,255,255,0.08);
-        }
-
-        .menu-item.active {
-          background: #0ea5e9;
-          color: white;
-        }
-
-        .content {
-          flex: 1;
-          padding: 30px;
-          overflow-y: auto;
-        }
-
-        .topbar {
-          margin-bottom: 20px;
-          font-weight: 600;
-          font-size: 18px;
-        }
-      `}</style>
+    <div className="flex h-screen bg-gray-100">
 
       {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="logo">NX-Desk</div>
+      <aside className="w-64 bg-slate-900 text-white flex flex-col p-5">
+        <div className="text-xl font-bold mb-8">NX-Desk</div>
+<button className="md:hidden p-2">☰</button>
         {ROUTES.map((item) => (
           <NavLink
             key={item.path}
             to={`/${item.path}`}
             className={({ isActive }) =>
-              `menu-item ${isActive ? "active" : ""}`
+              `px-4 py-2 rounded-lg mb-2 transition ${
+                isActive
+                  ? "bg-blue-500 text-white"
+                  : "text-gray-300 hover:bg-white/10"
+              }`
             }
           >
             {item.name}
@@ -77,11 +26,21 @@ export default function MainLayout() {
         ))}
       </aside>
 
-      {/* Content */}
-      <main className="content">
-        <div className="topbar">Workspace</div>
-        <Outlet />
-      </main>
+      {/* Main Section */}
+      <div className="flex-1 flex flex-col">
+
+        {/* Topbar */}
+        <header className="h-16 bg-white dark:bg-slate-800 shadow flex items-center justify-between px-6">
+          <h1 className="font-semibold text-lg">Workspace</h1>
+          <div className="text-sm text-gray-500">Welcome</div>
+        </header>
+
+        {/* Content */}
+        <main className="p-6 overflow-y-auto">
+          <Outlet />
+        </main>
+
+      </div>
     </div>
   );
 }
