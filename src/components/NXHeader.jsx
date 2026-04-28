@@ -13,40 +13,88 @@ export default function NXHeader() {
         position: "relative",
         top: 0,
         zIndex: 50,
+        backdropFilter: "blur(6px)",
       }}
     >
       <div
         style={{
-          maxWidth: 1200,
-          margin: "0 auto",
+          maxWidth: "100%",
+
           padding: "14px 24px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <Link
-          to="/"
-          style={{ textDecoration: "none", display: "flex", gap: 12, alignItems: "center" }}
-        >
-          <img src={logoSrc} alt="NX-Desk logo" style={{ height: 32 }} />
-          <div>
-            <div style={{ fontSize: 20, fontWeight: 800, color: "#0f172a" }}>NX-Desk</div>
-            <div style={{ fontSize: 12, color: "#6b7280" }}>AI Workspace Portal</div>
-          </div>
-        </Link>
-
+        {/* LEFT: Logo */}
         <Link
           to="/"
           style={{
-            fontSize: 14,
-            color: "#374151",
-            fontWeight: 700,
             textDecoration: "none",
+            display: "flex",
+            gap: 12,
+            alignItems: "center",
           }}
         >
-          Home
+          <img src={logoSrc} alt="NX-Desk logo" style={{ height: 32 }} />
         </Link>
+        <Link>
+          <div>
+            <div style={{ fontSize: 20, fontWeight: 800, color: "#0f172a" }}>
+              NX-Desk
+            </div>
+            <div style={{ fontSize: 12, color: "#6b7280" }}>
+              AI Workspace Portal
+            </div>
+          </div>
+        </Link>
+        {/* RIGHT: Nav */}
+        <nav style={{ display: "flex", gap: 14, alignItems: "end" }}>
+          <Link
+            to="/"
+            style={{
+              fontSize: 14,
+              color: "#374151",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/"
+            style={{
+              fontSize: 14,
+              color: "#374151",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
+          >
+            About
+          </Link>
+          <Link
+            to="/"
+            style={{
+              fontSize: 14,
+              color: "#374151",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
+          >
+            Services
+          </Link>
+          <Link
+            to="/"
+            style={{
+              fontSize: 14,
+              color: "#374151",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
+          >
+            Contact
+          </Link>
+        </nav>
       </div>
     </header>
   );

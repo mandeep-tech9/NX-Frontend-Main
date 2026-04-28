@@ -5,6 +5,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  PieChart,
 } from "recharts";
 
 import StatCard from "../components/ui/StatCard";
@@ -20,10 +21,10 @@ const data = [
 
 export default function Dashboard() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-gray-300">
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-gray-200">
         <StatCard title="Revenue" value="$12,400" />
         <StatCard title="Users" value="1,240" />
         <StatCard title="Orders" value="320" />

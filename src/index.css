@@ -1,3 +1,108 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+    --chart-1: 142.1 76.2% 36.3%;
+    --chart-2: 240 4.8% 95.9%;
+    --chart-3: 240 4.8% 95.9%;
+    --chart-4: 240 4.8% 105.9%;
+    --chart-5: 142.1 76.2% 46.3%;
+    
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 240 10% 38%;
+    --sidebar-primary: 142 76% 33%;
+    --sidebar-primary-foreground: 356 100% 100%;
+    --sidebar-accent: 240 5% 75%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 6% 87%;
+    --sidebar-ring: 142 76% 33%;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+    --radius: 0.5rem;
+    --chart-1: 142.1 70.6% 45.3%;
+    --chart-2: 240 3.7% 15.9%;
+    --chart-3: 12 6.5% 15.1%;
+    --chart-4: 12 6.5% 25.1%;
+    --chart-5: 142.1 70.6% 55.3%;
+    
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 50%;
+    --sidebar-primary: 142 71% 25%;
+    --sidebar-primary-foreground: 145 80% 100%;
+    --sidebar-accent: 12 7% 7%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 4% 8%;
+    --sidebar-ring: 142 72% 21%;
+  }
+}
+
+/* ── Design Tokens ── */
+:root {
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+
+/* ── Smooth scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
+/* ── Base transitions ── */
+* { box-sizing: border-box; }
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ── Recharts overrides for dark mode ── */
+.recharts-text { fill: currentColor !important; }
+.recharts-cartesian-axis-tick-value { fill: #94a3b8 !important; font-size: 12px; }
+.recharts-tooltip-wrapper { border-radius: 12px !important; }
